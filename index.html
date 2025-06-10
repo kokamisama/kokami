@@ -4,62 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Komikku Extension Repo</title>
-    <!-- Load Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
         }
-        /* Custom styles for subtle background pattern or gradient */
-        body {
-            background-color: #f0f4f8; /* Light gray background */
-            background-image: radial-gradient(circle at top left, #e0e7ff 0%, transparent 50%),
-                              radial-gradient(circle at bottom right, #cfe2ff 0%, transparent 55%);
-            background-size: 100% 100%;
-            background-attachment: fixed;
-        }
+
         .card {
-            background-color: white;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
+
+        .btn-primary {
+            background-color: #238636;
+            color: white;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #2ea043;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+
+        .btn-secondary:hover {
+            background-color: #30363d;
+            border-color: #8b949e;
+        }
+
+        .link-style {
+            color: #58a6ff;
+        }
+
+        .link-style:hover {
+            text-decoration: underline;
+        }
+
+        .repo-title {
+            color: #58a6ff;
+        }
+
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
-    <div class="container mx-auto max-w-4xl bg-white rounded-xl shadow-2xl p-8 md:p-12 space-y-8">
+    <div class="container mx-auto max-w-4xl card rounded-xl p-8 md:p-12 space-y-8">
 
-        <!-- Header Section -->
         <header class="text-center">
             <div class="flex flex-col items-center justify-center mb-4">
-                <!-- Komikku-like App Icon (SVG Placeholder) -->
-                <svg class="w-16 h-16 text-indigo-600 mb-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-16 h-16 text-indigo-400 mb-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14a1 1 0 102 0v-4a1 1 0 10-2 0v4zm1-8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                     <path fill-rule="evenodd" d="M9 12a1 1 0 100-2H6a1 1 0 100 2h3zM18 12a1 1 0 100-2h-3a1 1 0 100 2h3z" clip-rule="evenodd"></path>
                 </svg>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-100">
                     Komikku Extension Repo
                 </h1>
             </div>
         </header>
 
-        <!-- Main Call to Action Section -->
         <section class="text-center py-8">
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
-                Ready to Add the Repository to Komikku?
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
+                Add the Repository to Komikku
             </h2>
-            <p class="text-md text-gray-600 mb-8">
-                Click the button below on your Android device to automatically add my repository
-                to your Komikku app.
+            <p class="text-md text-gray-400 mb-8">
+                Click the button on your Android device to add my repository to your Komikku app.
             </p>
 
-            <!-- Add to Komikku Button -->
-            <!-- IMPORTANT: The 'href' attribute uses the 'komikku://' deep link.
-                 Ensure the URL is correctly URL-encoded.
-                 This link will only work on Android devices with Komikku installed. -->
             <a
                 href="tachiyomi://repo/add?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkokamisama%2Fkomikku-repo%2Findex.min.json"
-                class="inline-flex items-center justify-center px-8 py-4 bg-indigo-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-indigo-700
-                       transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50"
+                class="inline-flex items-center justify-center px-8 py-4 btn-primary font-bold text-lg rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
             >
                 <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -67,32 +89,24 @@
                 Add My Repo to Komikku
             </a>
             <p class="text-sm text-gray-500 mt-4">
-                (This button requires Komikku or other Mihon Fork to be installed on your Android device.)
+                (Requires Komikku or a Mihon Fork on your Android device)
             </p>
         </section>
 
-        <!-- Repository Details / Info Needed Section -->
-        <section class="grid md:grid-cols-2 gap-8 py-8 border-t border-gray-200">
-            <div class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-700">About This Repository</h3>
-                <p class="text-gray-600">
-                    This repository is a direct fork of the official <strong>Keiyoushi Extensions Source</strong> repository.
+        <section class="py-8 border-t border-gray-700">
+            <div class="space-y-4 text-center">
+                <h3 class="text-xl font-semibold text-gray-300">About This Repository</h3>
+                <p class="text-gray-400">
+                    This repository is a direct fork of the official <strong>Keiyoushi Extensions Source</strong>.
                 </p>
-                <p class="text-gray-600">
-                    I've created this fork primarily for my personal backup, to ensure I always have access to these extensions. While it's available publicly, its main purpose is for my own use. You can keep your fork up-to-date by regularly <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/syncing-a-fork" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">syncing your fork</a>.
-                </p>
-            </div>
-            <div class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-700">Why Trust This Fork?</h3>
-                <p class="text-gray-600">
-                    The extensions in this repository retain the **exact same signing key fingerprint** as the original official extensions. This means Komikku verifies them as legitimate updates from a trusted source.
+                <p class="text-gray-400">
+                    This fork is primarily for personal backup. While public, its main purpose is my own use. Keep your fork updated by <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/syncing-a-fork" target="_blank" rel="noopener noreferrer" class="link-style">syncing your fork</a>.
                 </p>
             </div>
         </section>
 
-        <!-- Links Section -->
-        <section class="text-center py-8 border-t border-gray-200">
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
+        <section class="text-center py-8 border-t border-gray-700">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
                 More Information
             </h2>
             <div class="flex flex-wrap justify-center gap-6">
@@ -100,8 +114,7 @@
                     href="https://github.com/kokamisama/komikku-repo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="px-6 py-3 bg-gray-200 text-gray-800 font-medium rounded-lg hover:bg-gray-300 transition-colors duration-200
-                           transform hover:scale-105 shadow-md"
+                    class="px-6 py-3 btn-secondary font-medium rounded-lg shadow-md"
                 >
                     <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.867-.013-1.702-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.465-1.11-1.465-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.088 2.91.832.092-.647.354-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.945 0-1.092.39-1.983 1.029-2.675-.103-.253-.446-1.268.098-2.642 0 0 .84-.268 2.75 1.022A9.61 9.61 0 0112 6.865c.85.004 1.704.114 2.504.331 1.909-1.29 2.747-1.022 2.747-1.022.546 1.374.202 2.389.099 2.642.64.692 1.029 1.583 1.029 2.675 0 3.84-2.339 4.685-4.566 4.935.359.307.678.915.678 1.846 0 1.338-.012 2.419-.012 2.747 0 .268.18.577.688.483C20.137 20.19 23 16.425 23 12.017 23 6.484 18.522 2 13 2h-1z" clip-rule="evenodd"></path>
@@ -112,8 +125,7 @@
                     href="https://github.com/keiyoushi/extensions-source"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="px-6 py-3 bg-gray-200 text-gray-800 font-medium rounded-lg hover:bg-gray-300 transition-colors duration-200
-                           transform hover:scale-105 shadow-md"
+                    class="px-6 py-3 btn-secondary font-medium rounded-lg shadow-md"
                 >
                     <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.867-.013-1.702-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.465-1.11-1.465-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.088 2.91.832.092-.647.354-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.945 0-1.092.39-1.983 1.029-2.675-.103-.253-.446-1.268.098-2.642 0 0 .84-.268 2.75 1.022A9.61 9.61 0 0112 6.865c.85.004 1.704.114 2.504.331 1.909-1.29 2.747-1.022 2.747-1.022.546 1.374.202 2.389.099 2.642.64.692 1.029 1.583 1.029 2.675 0 3.84-2.339 4.685-4.566 4.935.359.307.678.915.678 1.846 0 1.338-.012 2.419-.012 2.747 0 .268.18.577.688.483C20.137 20.19 23 16.425 23 12.017 23 6.484 18.522 2 13 2h-1z" clip-rule="evenodd"></path>
@@ -123,8 +135,7 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="text-center text-gray-500 text-sm pt-8 border-t border-gray-200">
+        <footer class="text-center text-gray-500 text-sm pt-8 border-t border-gray-700">
             <p>&copy; 2025 kokamisama. All rights reserved.</p>
         </footer>
 
